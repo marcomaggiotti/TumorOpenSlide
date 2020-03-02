@@ -11,6 +11,7 @@ export default function configureStore (initialState, history) {
     applyMiddleware(...middleware),
     typeof window === 'object' && typeof window.devToolsExtension !== 'undefined' ? () => window.__REDUX_DEVTOOLS_EXTENSION__ : f => f
   )(createStore)
+
   const store = createStoreWithMiddleware(rootReducer)
 
   if (module.hot) {
