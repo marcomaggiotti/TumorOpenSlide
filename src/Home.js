@@ -1,6 +1,7 @@
 import React from 'react'
 import Slides from './Slides'
 import NewSlide from './NewSlide'
+import ActualSlide from './ActualSlide'
 import logo from './logo.svg'
 import './App.css'
 
@@ -20,6 +21,9 @@ function Home() {
             </a>
           </span>
         </h4>
+
+
+        <ActualSlide/>
 
         <h4>Slides List</h4>
         <Slides />

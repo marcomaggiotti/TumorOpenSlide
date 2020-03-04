@@ -15,6 +15,7 @@ function Slides() {
   ])
 
   // Get todos from redux state
+  const actualSlide = useSelector(state => state.slideReducer.slide[0].id)
   const slides = useSelector(state => state.firebase.ordered.slides)
 
   // Show a message while todos are loading
@@ -28,6 +29,7 @@ function Slides() {
   }
 
   return slides.reverse().map(({ value: slide, key }, ind) => (
+
     <SlideItem
       key={`${key}-${ind}`}
       id={key}

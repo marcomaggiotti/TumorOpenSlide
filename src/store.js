@@ -4,15 +4,18 @@ import rootReducer from './reducer'
 import { getFirebase } from 'react-redux-firebase'
 
 export default function configureStore (initialState, history) {
+
   const middleware = [
     thunk.withExtraArgument({ getFirebase })
   ]
+
   const createStoreWithMiddleware = compose(
     applyMiddleware(...middleware),
     typeof window === 'object' && typeof window.devToolsExtension !== 'undefined' ? () => window.__REDUX_DEVTOOLS_EXTENSION__ : f => f
   )(createStore)
 
   const store = createStoreWithMiddleware(rootReducer)
+  console.log(store.getState().slideReducer.slide[0].id)
 
   if (module.hot) {
     // Enable Webpack hot module replacement for reducers

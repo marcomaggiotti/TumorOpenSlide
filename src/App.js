@@ -14,17 +14,21 @@ import './App.css'
 
 const initialState = window && window.__INITIAL_STATE__ // set initial state here
 const store = configureStore(initialState)
+window.store = store
 // Initialize Firebase instance
 initFirebase()
 
 export default function App () {
   return (
+
     <Provider store={store}>
+
       <ReactReduxFirebaseProvider
         firebase={firebase}
         config={rfConfig}
         dispatch={store.dispatch}
         createFirestoreInstance={createFirestoreInstance}>
+
         <Home />
       </ReactReduxFirebaseProvider>
     </Provider>
