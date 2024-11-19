@@ -11,7 +11,7 @@
     "dev": "cross-env REACT_APP_USE_DB_EMULATORS=true yarn start"
   },
   "dependencies": {
-    "firebase": "^7.8.2",
+    "firebase": "^10.9.0",
     "openseadragon": "^2.4.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
